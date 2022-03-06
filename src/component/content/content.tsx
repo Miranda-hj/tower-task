@@ -3,18 +3,29 @@ import styles from "./content.module.scss";
 
 export const Content = () => {
   return (
-    <div className={styles.basic}>
-      <form method={"get"}>
+    <form method={"get"}>
+      <div className={styles.basic}>
         <h3 className={styles.title}>Welcome </h3>
         <div>
-          <input type={"number"} placeholder={"Credit card number"} />
+          <input
+            type={"number"}
+            placeholder={"Credit card number"}
+            className={styles.cardNumber}
+          />
         </div>
-        <div>
-          <input type={"number"} placeholder={"CVC"} />
-          <input type={"date"} placeholder={"expiry"} />
+        <div className={styles.inputGroup}>
+          <input type={"number"} placeholder={"CVC"} className={styles.cvc} />
+          <input
+            type={"text"}
+            onChange={(e) => console.log(e.target.value)}
+            onFocus={(e) => (e.target.type = "date")}
+            onBlur={(e) => (e.target.type = "text")}
+            placeholder={"Expiry"}
+            className={styles.expiry}
+          />
         </div>
-        <input type={"button"} value={"Submit"} />
-      </form>
-    </div>
+        <input type={"button"} value={"Submit"} className={styles.submit} />
+      </div>
+    </form>
   );
 };

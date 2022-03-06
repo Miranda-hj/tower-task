@@ -1,6 +1,37 @@
 .basic {
     display: flex;
     flex-direction: column;
-    padding: 0 2rem 1rem 2rem;
-
+    padding: 0 2rem 3rem 2rem;
+    gap: 2rem;
+}
+.cardNumber {
+    border: 2px solid;
+    text-align: center;
+    padding: 1rem 0;
+    width: 100%;
+}
+.inputGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+.cvc {
+    border: 2px solid;
+    text-align: center;
+    padding: 0.5rem 0;
+    width: 8rem;
+    height: 1rem;
+}
+.expiry {
+    border: 2px solid;
+    text-align: center;
+    padding: 0.5rem 0;
+    width: 8rem;
+    height: 1rem;
+}
+.submit {
+    border: 2px solid;
+    text-align: center;
+    padding: 1rem 0;
 }
