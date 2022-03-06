@@ -2,22 +2,28 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import styles from "./content.module.scss";
 
+interface FormData {
+  cardNumber: number;
+  cvc: number;
+  date: Date;
+}
+
 export const Content = (props: { menu: boolean }) => {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data: any) => console.log(data);
+  const { register, handleSubmit } = useForm<FormData>();
+  const onSubmit = handleSubmit((data) => console.log(data));
   return (
     <>
       {!props.menu ? (
         <h4 className={styles.menu}>This is menu content</h4>
       ) : (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={onSubmit}>
           <div className={styles.basic}>
             <h3 className={styles.title}>Welcome </h3>
             <div>
               <input
                 type={"number"}
                 placeholder={"Credit card number"}
-                {...(register("number"), { required: true })}
+                {...register("cardNumber", { required: true })}
                 className={styles.cardNumber}
               />
             </div>
@@ -25,18 +31,18 @@ export const Content = (props: { menu: boolean }) => {
               <input
                 type={"number"}
                 placeholder={"CVC"}
-                {...(register("cvc"), { required: true })}
+                {...register("cvc", { required: true })}
                 className={styles.cvc}
               />
               <input
                 type={"text"}
                 onFocus={(e) => (e.target.type = "date")}
                 placeholder={"Expiry"}
-                {...(register("expiry"), { required: true })}
+                {...register("date", { required: true })}
                 className={styles.expiry}
               />
             </div>
-            <input type={"submit"} value={"Submit"} className={styles.submit} />
+            <input value={"Submit"} type={"submit"} className={styles.submit} />
           </div>
         </form>
       )}
