@@ -16,7 +16,7 @@ export default function App() {
           <Arrow onClick={() => setActive(!active)} />
         )}
       </Navigation>
-      <Content menu={active} />
+      <Content menu={active} userName={`{ User. firstName }`} />
     </div>
   );
 }

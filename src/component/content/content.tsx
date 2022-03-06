@@ -8,17 +8,17 @@ interface FormData {
   date: Date;
 }
 
-export const Content = (props: { menu: boolean }) => {
+export const Content = (props: { menu: boolean; userName: string }) => {
   const { register, handleSubmit } = useForm<FormData>();
   const onSubmit = handleSubmit((data) => console.log(data));
   return (
     <>
       {!props.menu ? (
-        <h4 className={styles.menu}>This is menu content</h4>
+        <h3 className={styles.menu}>This is menu content</h3>
       ) : (
         <form onSubmit={onSubmit}>
           <div className={styles.basic}>
-            <h3 className={styles.title}>Welcome </h3>
+            <h3 className={styles.title}>Welcome {props.userName}</h3>
             <div>
               <input
                 type={"number"}
