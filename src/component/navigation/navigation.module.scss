@@ -2,8 +2,11 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0.5rem 2rem;
     border-bottom: 2px solid;
+}
+.icon {
+    cursor: pointer;
 }
 .title {
     margin: auto;
