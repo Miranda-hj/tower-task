@@ -1,4 +1,4 @@
-export const Arrow = (props: { onClick: () => void }) => {
+export const Arrow = (props: { onClick?: () => void }) => {
   return (
     <svg
       width="35"

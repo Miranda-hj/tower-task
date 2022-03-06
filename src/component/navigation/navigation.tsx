@@ -1,18 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import { Arrow } from "../icon/arrow/arrow";
 import { Burger } from "../icon/burger/burger";
 import styles from "./navigation.module.scss";
-
-export const Navigation = () => {
-  const [active, setActive] = useState(true);
+interface IProps {
+  title: string;
+  active: boolean;
+  icon: JSX.Element;
+  onClick: () => void;
+}
+export const Navigation: React.FC<IProps> = ({
+  title,
+  active,
+  icon,
+  onClick,
+}) => {
   return (
     <div className={styles.basic}>
-      {active ? (
-        <Burger onClick={() => setActive(false)} />
-      ) : (
-        <Arrow onClick={() => setActive(true)} />
-      )}
-      <h3 className={styles.title}>{"Register card form"}</h3>
+      {active ? <Burger /> : <Arrow />}
+      {console.log(active)}
+      <h3 className={styles.title}>{title}</h3>
     </div>
   );
 };
