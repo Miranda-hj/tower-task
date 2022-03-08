@@ -12,12 +12,14 @@ export const Content = (props: { menu: boolean; userName: string }) => {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm<FormData>({
     mode: "onChange",
   });
   const onSubmit = handleSubmit((data) => {
     console.log(data);
     alert("Submit!");
+    reset();
   });
   return (
     <>
