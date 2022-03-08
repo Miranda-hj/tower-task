@@ -19,6 +19,11 @@
     justify-content: end;
     gap: 2rem;
 }
+.errorGroup{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
 .cvc {
     border: 2px solid;
     text-align: center;
@@ -32,6 +37,11 @@
     padding: 0.5rem 0;
     width: 8rem;
     height: 1rem;
+}
+.message {
+    font-size: 14px;
+    color:red;
+    text-align: end;
 }
 .submit {
     border: 2px solid;
