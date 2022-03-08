@@ -1,15 +1,20 @@
-import React from "react";
-import { useForm } from "react-hook-form";
 import styles from "./content.module.scss";
+import { useForm } from "react-hook-form";
+import { ErrorMessage } from "@hookform/error-message";
 
 interface FormData {
   cardNumber: number;
   cvc: number;
   date: Date;
+  singlleErrorInput: string;
 }
 
 export const Content = (props: { menu: boolean; userName: string }) => {
-  const { register, handleSubmit } = useForm<FormData>();
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm<FormData>();
   const onSubmit = handleSubmit((data) => console.log(data));
   return (
     <>
@@ -23,14 +28,20 @@ export const Content = (props: { menu: boolean; userName: string }) => {
               <input
                 type={"number"}
                 placeholder={"Credit card number"}
-                {...register("cardNumber", { required: true })}
+                {...register("cardNumber", { required: "This is required." })}
                 className={styles.cardNumber}
+              />
+              <ErrorMessage
+                errors={errors}
+                name="singleErrorInput"
+                render={({ message }) => <p>{message}</p>}
               />
             </div>
             <div className={styles.inputGroup}>
               <input
                 type={"number"}
                 placeholder={"CVC"}
+                maxLength={3}
                 {...register("cvc", { required: true })}
                 className={styles.cvc}
               />
