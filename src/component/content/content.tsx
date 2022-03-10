@@ -51,14 +51,14 @@ export const Content = (props: { menu: boolean; userName: string }) => {
                   placeholder={"CVC"}
                   {...register("cvc", {
                     required: true,
-                    maxLength: 3,
+                    max: 999,
                   })}
                   className={styles.cvc}
                 />
                 {errors.cvc && errors.cvc.type === "required" && (
                   <span className={styles.message}>This is required</span>
                 )}
-                {errors.cvc && errors.cvc.type === "maxLength" && (
+                {errors.cvc && errors.cvc.type === "max" && (
                   <div className={styles.message}>
                     <span>Limited 3 digital</span>
                   </div>
