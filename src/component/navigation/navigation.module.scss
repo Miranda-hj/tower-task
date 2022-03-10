@@ -1,9 +1,6 @@
 .basic {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0.5rem 2rem;
-    border-bottom: 2px solid;
+    flex-direction: column;
 }
 .icon {
     cursor: pointer;
@@ -11,4 +8,11 @@
 .title {
     margin: auto;
     padding: 1rem 0;
+}
+.heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    border-bottom: 2px solid;
 }

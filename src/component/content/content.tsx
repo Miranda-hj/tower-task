@@ -1,5 +1,6 @@
 import styles from "./content.module.scss";
 import { useForm } from "react-hook-form";
+import { Menu } from "../menu/menu";
 
 interface FormData {
   cardNumber: number;
@@ -24,7 +25,7 @@ export const Content = (props: { menu: boolean; userName: string }) => {
   return (
     <>
       {!props.menu ? (
-        <h3 className={styles.menu}>This is menu content</h3>
+        <Menu className={styles.menu} />
       ) : (
         <form onSubmit={onSubmit}>
           <div className={styles.basic}>
