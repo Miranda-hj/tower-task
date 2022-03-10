@@ -10,8 +10,7 @@ interface FormData {
 export const Content = (props: { menu: boolean; userName: string }) => {
   const {
     register,
-    formState: { errors },
-    formState,
+    formState: { errors, isDirty, isValid },
     handleSubmit,
     reset,
   } = useForm<FormData>({
@@ -61,7 +60,7 @@ export const Content = (props: { menu: boolean; userName: string }) => {
                 )}
                 {errors.cvc && errors.cvc.type === "max" && (
                   <div className={styles.message}>
-                    <span>Limited 3 digital</span>
+                    <span>CVC number is invalid</span>
                   </div>
                 )}
               </div>
@@ -82,7 +81,7 @@ export const Content = (props: { menu: boolean; userName: string }) => {
               value={"Submit"}
               type={"submit"}
               className={styles.submit}
-              disabled={!formState.isValid && !formState.isDirty}
+              disabled={!isValid || !isDirty}
             />
           </div>
         </form>
