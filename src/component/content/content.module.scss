@@ -1,8 +1,11 @@
 .basic {
     display: flex;
     flex-direction: column;
-    padding: 0 2rem 3rem 2rem;
-    gap: 2rem;
+    padding: 1rem 2rem;
+    gap: 1rem;
+}
+.title {
+    margin-bottom: 5rem;
 }
 .menu {
     margin: 2rem 5rem 18rem 2rem;

@@ -23,7 +23,7 @@ export const Navigation: React.FC<IProps> = ({
           {active ? "Register card form" : "Menu"}
         </h3>
       </div>
-      <div className={styles.content}>{children}</div>
+      <div>{children}</div>
     </div>
   );
 };
