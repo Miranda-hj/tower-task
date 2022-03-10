@@ -11,6 +11,7 @@ export const Content = (props: { menu: boolean; userName: string }) => {
   const {
     register,
     formState: { errors },
+    formState,
     handleSubmit,
     reset,
   } = useForm<FormData>({
@@ -18,7 +19,7 @@ export const Content = (props: { menu: boolean; userName: string }) => {
   });
   const onSubmit = handleSubmit((data) => {
     console.log(data);
-    alert("Submit!");
+    alert("Submitted!");
     reset();
   });
   return (
@@ -77,7 +78,12 @@ export const Content = (props: { menu: boolean; userName: string }) => {
                 )}
               </div>
             </div>
-            <input value={"Submit"} type={"submit"} className={styles.submit} />
+            <input
+              value={"Submit"}
+              type={"submit"}
+              className={styles.submit}
+              disabled={!formState.isValid && !formState.isDirty}
+            />
           </div>
         </form>
       )}
