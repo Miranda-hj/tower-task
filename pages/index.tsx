@@ -5,7 +5,6 @@ import { Navigation } from "../src/component/navigation/navigation";
 import { Burger } from "../src/component/icon/burger/burger";
 
 export default function App() {
-  const [active, setActive] = useState(true);
   return (
     <div className={styles.basic}>
       <Navigation

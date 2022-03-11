@@ -16,7 +16,7 @@
 .inputGroup {
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: flex-end;
     gap: 2rem;
 }
 .errorGroup{
@@ -39,7 +39,7 @@
 .message {
     font-size: 14px;
     color:red;
-    text-align: end;
+    text-align: flex-end;
 }
 .submit {
     border: 2px solid;
