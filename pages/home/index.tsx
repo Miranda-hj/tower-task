@@ -4,16 +4,11 @@ import { Arrow } from "../../src/component/icon/arrow/arrow";
 import { Navigation } from "../../src/component/navigation/navigation";
 import styles from "./index.module.scss";
 
-export default function Menu() {
+export default function Home() {
   return (
     <div className={styles.basic}>
-      <Navigation title={"Menu"} icon={<Arrow className={styles.icon} />}>
-        <div className={styles.menu}>
-          <h3> This is menu content</h3>
-          <Link href={"/home"} passHref>
-            <h3 className={styles.link}> Home </h3>
-          </Link>
-        </div>
+      <Navigation title={"Home"} icon={<Arrow className={styles.icon} />}>
+        <h3 className={styles.content}> This is home page</h3>
       </Navigation>
     </div>
   );

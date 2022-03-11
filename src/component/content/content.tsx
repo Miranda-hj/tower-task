@@ -1,5 +1,6 @@
 import styles from "./content.module.scss";
 import { useForm } from "react-hook-form";
+import { Error } from "../error/error";
 
 interface FormData {
   cardNumber: number;
@@ -35,9 +36,7 @@ export const Content = (props: { userName: string }) => {
             className={styles.cardNumber}
           />
           {errors.cardNumber && errors.cardNumber.type === "required" && (
-            <div className={styles.message}>
-              <span>This is required</span>
-            </div>
+            <Error className={styles.message} message={"This is required"} />
           )}
         </div>
         <div className={styles.inputGroup}>
@@ -53,14 +52,15 @@ export const Content = (props: { userName: string }) => {
               className={styles.cvc}
             />
             {errors.cvc && errors.cvc.type === "required" && (
-              <span className={styles.message}>This is required</span>
+              <Error className={styles.message} message={"This is required"} />
             )}
             {errors.cvc &&
-              errors.cvc.type === "maxLength" &&
-              errors.cvc.type === "minLength" && (
-                <div className={styles.message}>
-                  <span>CVC number is invalid</span>
-                </div>
+              errors.cvc.type === "minLength" &&
+              errors.cvc.type === "maxLength" && (
+                <Error
+                  className={styles.message}
+                  message={"CVC number is invalid"}
+                />
               )}
           </div>
           <div className={styles.errorGroup}>
@@ -72,7 +72,7 @@ export const Content = (props: { userName: string }) => {
               className={styles.expiry}
             />
             {errors.date && errors.date.type === "required" && (
-              <span className={styles.message}>This is required</span>
+              <Error className={styles.message} message={"This is required"} />
             )}
           </div>
         </div>

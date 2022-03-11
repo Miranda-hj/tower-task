@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const Burger = (props: { className: string }) => {
   return (
-    <Link href={"/Menu"} passHref>
+    <Link href={"/menu"} passHref>
       <svg
         viewBox="0 0 100 80"
         width="35"
