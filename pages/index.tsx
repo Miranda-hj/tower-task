@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./index.module.scss";
 import { Content } from "../src/component/content/content";
 import { Navigation } from "../src/component/navigation/navigation";
