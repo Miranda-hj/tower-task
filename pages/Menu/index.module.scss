@@ -7,6 +7,9 @@
 }
 .link {
     cursor: pointer;
+    &:hover{
+        color:blue;
+    }
 }
 .icon {
     cursor: pointer;

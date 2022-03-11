@@ -9,9 +9,11 @@ export default function Menu() {
     <div className={styles.basic}>
       <Navigation title={"Menu"} icon={<Arrow className={styles.icon} />}>
         <div className={styles.menu}>
-          <h3> This is menu content</h3>
           <Link href={"/home"} passHref>
-            <h3 className={styles.link}> Home </h3>
+            <h3 className={styles.link}>Home</h3>
+          </Link>
+          <Link href={"/"} passHref>
+            <h3 className={styles.link}>Register card form</h3>
           </Link>
         </div>
       </Navigation>
