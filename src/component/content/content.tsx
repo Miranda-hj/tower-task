@@ -1,6 +1,5 @@
 import styles from "./content.module.scss";
 import { useForm } from "react-hook-form";
-import { Menu } from "../menu/menu";
 
 interface FormData {
   cardNumber: number;
@@ -8,7 +7,7 @@ interface FormData {
   date: Date;
 }
 
-export const Content = (props: { menu: boolean; userName: string }) => {
+export const Content = (props: { userName: string }) => {
   const {
     register,
     formState: { errors, isDirty, isValid },
@@ -23,70 +22,67 @@ export const Content = (props: { menu: boolean; userName: string }) => {
     reset();
   });
   return (
-    <>
-      {!props.menu ? (
-        <Menu className={styles.menu} />
-      ) : (
-        <form onSubmit={onSubmit}>
-          <div className={styles.basic}>
-            <h3 className={styles.title}>Welcome {props.userName}</h3>
-            <div>
-              <input
-                type={"number"}
-                placeholder={"Credit card number"}
-                {...register("cardNumber", {
-                  required: true,
-                })}
-                className={styles.cardNumber}
-              />
-              {errors.cardNumber && errors.cardNumber.type === "required" && (
+    <form onSubmit={onSubmit}>
+      <div className={styles.basic}>
+        <h3 className={styles.title}>Welcome {props.userName}</h3>
+        <div>
+          <input
+            type={"number"}
+            placeholder={"Credit card number"}
+            {...register("cardNumber", {
+              required: true,
+            })}
+            className={styles.cardNumber}
+          />
+          {errors.cardNumber && errors.cardNumber.type === "required" && (
+            <div className={styles.message}>
+              <span>This is required</span>
+            </div>
+          )}
+        </div>
+        <div className={styles.inputGroup}>
+          <div className={styles.errorGroup}>
+            <input
+              type={"number"}
+              placeholder={"CVC"}
+              {...register("cvc", {
+                required: true,
+                minLength: 3,
+                maxLength: 3,
+              })}
+              className={styles.cvc}
+            />
+            {errors.cvc && errors.cvc.type === "required" && (
+              <span className={styles.message}>This is required</span>
+            )}
+            {errors.cvc &&
+              errors.cvc.type === "maxLength" &&
+              errors.cvc.type === "minLength" && (
                 <div className={styles.message}>
-                  <span>This is required</span>
+                  <span>CVC number is invalid</span>
                 </div>
               )}
-            </div>
-            <div className={styles.inputGroup}>
-              <div className={styles.errorGroup}>
-                <input
-                  type={"number"}
-                  placeholder={"CVC"}
-                  {...register("cvc", {
-                    required: true,
-                    max: 999,
-                  })}
-                  className={styles.cvc}
-                />
-                {errors.cvc && errors.cvc.type === "required" && (
-                  <span className={styles.message}>This is required</span>
-                )}
-                {errors.cvc && errors.cvc.type === "max" && (
-                  <div className={styles.message}>
-                    <span>CVC number is invalid</span>
-                  </div>
-                )}
-              </div>
-              <div className={styles.errorGroup}>
-                <input
-                  type={"number"}
-                  onFocus={(e) => (e.target.type = "date")}
-                  placeholder={"Expiry"}
-                  {...register("date", { required: true })}
-                  className={styles.expiry}
-                />
-                {errors.date && errors.date.type === "required" && (
-                  <span className={styles.message}>This is required</span>
-                )}
-              </div>
-            </div>
-            <input
-              value={"Submit"}
-              type={"submit"}
-              className={styles.submit}
-              disabled={!isValid || !isDirty}
-            />
           </div>
-        </form>
-      )}
-    </>
+          <div className={styles.errorGroup}>
+            <input
+              type={"number"}
+              onFocus={(e) => (e.target.type = "date")}
+              placeholder={"Expiry"}
+              {...register("date", { required: true })}
+              className={styles.expiry}
+            />
+            {errors.date && errors.date.type === "required" && (
+              <span className={styles.message}>This is required</span>
+            )}
+          </div>
+        </div>
+        <input
+          value={"Submit"}
+          type={"submit"}
+          className={styles.submit}
+          disabled={!isValid || !isDirty}
+        />
+      </div>
+    </form>
   );
 };

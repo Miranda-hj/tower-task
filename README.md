@@ -1,48 +1,34 @@
-# Assignment
-Create a one page application following the LO-FIs given in this assignment.
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-We suggest to use create-react-app typescript for your setup. Intemediate engineers and above are also expected to complete the [Backend test](https://github.com/runekr/recruit-backend)
+## Getting Started
 
-## LO-FI
-Remember these are LO-FI and should only be treated as such.
-![lofi](https://raw.githubusercontent.com/runekr/recruit-react/master/lofi.png)
+First, run the development server:
 
-## Spec
-These are the only functional requirements for your implementation:
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-### Navigation
-- Click on burger icon shows menu
-- Click on back shows register card form 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Inputs
-- Credit card field is any number
-- CVC is any number
-- Expires is any valid date
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-### Submit
-- You cannot submit until input fields
-- When submitting then console log the input values
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-## Commits
-Please commit frequently to communicate your thoughts while working on this assignment.
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## What is valued
-- Tests
-- Clean Code
-- State Management
-- Design (Responsive)
-- Accessibility
+## Learn More
 
-## Duration
-Use roughly 3 hours on this assignment. You are only expected to do work on this assignment that matches the skill level of the role you are applying for, but you are welcome to do as much as you like. You are not necessarily expected to do everything in this assignment because of the short time duration of the assignment.
+To learn more about Next.js, take a look at the following resources:
 
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-# Tools & Tech
-You can use any tools, plugins and technologies as required for you to complete this assignment. We expect that you in this assignment demonstrate competencies with the following technologies:
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
--	React
--	Typescript
--	CSS
+## Deploy on Vercel
 
-# Submitting Assignment
-Feel free to create a public GitHub repo or private GitHub repo where you invite runekr. He can give access to the right people.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
