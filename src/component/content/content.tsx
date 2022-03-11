@@ -68,11 +68,17 @@ export const Content = (props: { userName: string }) => {
               type={"number"}
               onFocus={(e) => (e.target.type = "date")}
               placeholder={"Expiry"}
-              {...register("date", { required: true })}
+              {...register("date", { required: true, min: "2022-03-01" })}
               className={styles.expiry}
             />
             {errors.date && errors.date.type === "required" && (
               <Error className={styles.message} message={"This is required"} />
+            )}
+            {errors.date && errors.date.type === "min" && (
+              <Error
+                className={styles.message}
+                message={"Expriy date is invalid"}
+              />
             )}
           </div>
         </div>
