@@ -10,7 +10,7 @@ export const Navigation: React.FC<IProps> = ({ children, title, icon }) => {
   return (
     <div className={styles.basic}>
       <div className={styles.heading}>
-        {icon}
+        <div className={styles.iconBox}>{icon}</div>
         <h3 className={styles.title}>{title}</h3>
       </div>
       <div>{children}</div>

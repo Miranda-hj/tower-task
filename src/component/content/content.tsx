@@ -1,6 +1,7 @@
 import styles from "./content.module.scss";
 import { useForm } from "react-hook-form";
 import { Error } from "../error/error";
+import { kMaxLength } from "buffer";
 
 interface FormData {
   cardNumber: number;
@@ -32,6 +33,8 @@ export const Content = (props: { userName: string }) => {
             placeholder={"Credit card number"}
             {...register("cardNumber", {
               required: true,
+              minLength: 15,
+              maxLength: 16,
             })}
             className={styles.cardNumber}
           />
@@ -39,7 +42,7 @@ export const Content = (props: { userName: string }) => {
             <Error className={styles.message} message={"This is required"} />
           )}
         </div>
-        <div className={styles.inputGroup}>
+        <div className={styles.cardInfo}>
           <div className={styles.errorGroup}>
             <input
               type={"number"}

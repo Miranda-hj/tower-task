@@ -9,15 +9,16 @@
 }
 .cardNumber {
     border: 2px solid;
+    border-radius: 12px;
     text-align: center;
     padding: 1rem 0;
     width: 100%;
 }
-.inputGroup {
+.cardInfo {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    gap: 2rem;
+    gap: 20px;
 }
 .errorGroup{
     display: flex;
@@ -26,12 +27,14 @@
 }
 .cvc {
     border: 2px solid;
+    border-radius: 12px;
     text-align: center;
     height: 2.5rem;
     width: 8rem;
 }
 .expiry {
     border: 2px solid;
+    border-radius: 12px;
     text-align: center;
     height: 2.5rem;
     width: 8rem;
@@ -44,5 +47,26 @@
 .submit {
     border: 2px solid;
     text-align: center;
+    color: white;
+    background-color: green;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
     padding: 1rem 0;
+}
+.submit:hover, .submit:active {
+    background-color: greenyellow;
+    transform: scale(1.05);
+}
+
+/* Hide arrows icons*/
+.basic input[type="number"]::-webkit-inner-spin-button,
+.basic input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/*For firefox */
+.basic input[type="number"] {
+    -moz-appearance: textfield;
 }
